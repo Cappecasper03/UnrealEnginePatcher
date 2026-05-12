@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="UnrealEnginePatcher"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://caga83k3nil03"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+run/low_processor_mode=true
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=800
 
 [dotnet]
 
