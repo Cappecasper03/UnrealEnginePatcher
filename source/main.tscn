@@ -1,49 +1,92 @@
 [gd_scene format=3 uid="uid://caga83k3nil03"]
 
-[ext_resource type="PackedScene" uid="uid://dr3rt1yp1bar7" path="res://source/dashboard/dashboard.tscn" id="1_kaxhg"]
+[ext_resource type="Script" uid="uid://dbx46n3hh12dm" path="res://source/main.gd" id="1_kaxhg"]
+[ext_resource type="PackedScene" uid="uid://biv628vrfj06g" path="res://source/add_patch.tscn" id="2_62cc7"]
 
-[node name="Main" type="Control" unique_id=1232194366]
+[node name="Main" type="Control" unique_id=1232194366 node_paths=PackedStringArray("tab_container", "target_path", "target_path_button", "add_patch_button", "add_patch_back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kaxhg")
+tab_container = NodePath("ColorRect/TabContainer")
+target_path = NodePath("ColorRect/TabContainer/Main/TargetPath/TextEdit")
+target_path_button = NodePath("ColorRect/TabContainer/Main/TargetPath/Button")
+add_patch_button = NodePath("ColorRect/TabContainer/Main/Patch/Button")
+add_patch_back_button = NodePath("ColorRect/TabContainer/AddPatch/Button")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=3267733]
-layout_mode = 0
-offset_right = 1200.0
-offset_bottom = 771.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1504229875]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
-color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=74894065]
-layout_mode = 0
-offset_right = 1200.0
-offset_bottom = 771.0
 size_flags_vertical = 3
+color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer" unique_id=1896068334]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer" unique_id=143985573]
-layout_mode = 2
-text = "Dashboard"
-
-[node name="Button2" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer" unique_id=1288523559]
-layout_mode = 2
-text = "Tab2"
-
-[node name="Button3" type="Button" parent="ColorRect/HBoxContainer/VBoxContainer" unique_id=986518660]
-layout_mode = 2
-text = "Tab3"
-
-[node name="TabContainer" type="TabContainer" parent="ColorRect/HBoxContainer" unique_id=1163285927]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="TabContainer" type="TabContainer" parent="ColorRect" unique_id=1563807235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 current_tab = 0
 tabs_visible = false
 
-[node name="Dashboard" parent="ColorRect/HBoxContainer/TabContainer" unique_id=1940335956 instance=ExtResource("1_kaxhg")]
+[node name="Main" type="VBoxContainer" parent="ColorRect/TabContainer" unique_id=1190834287]
 layout_mode = 2
 metadata/_tab_index = 0
+
+[node name="TargetPath" type="HBoxContainer" parent="ColorRect/TabContainer/Main" unique_id=1200879814]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/TabContainer/Main/TargetPath" unique_id=904723443]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Target Engine Path"
+
+[node name="Button" type="Button" parent="ColorRect/TabContainer/Main/TargetPath" unique_id=1147925559]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "Folder"
+
+[node name="Patch" type="HBoxContainer" parent="ColorRect/TabContainer/Main" unique_id=1270631844]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/TabContainer/Main/Patch" unique_id=216814129]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+popup/item_0/text = "Item1"
+popup/item_0/id = 0
+popup/item_1/text = "Item2"
+popup/item_1/id = 1
+popup/item_2/text = "Item3"
+popup/item_2/id = 2
+
+[node name="Button" type="Button" parent="ColorRect/TabContainer/Main/Patch" unique_id=1166102735]
+layout_mode = 2
+text = "Add"
+
+[node name="Button" type="Button" parent="ColorRect/TabContainer/Main" unique_id=1496933139]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="AddPatch" type="VBoxContainer" parent="ColorRect/TabContainer" unique_id=2077574898]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button" type="Button" parent="ColorRect/TabContainer/AddPatch" unique_id=1546749528]
+layout_mode = 2
+text = "Back"
+
+[node name="AddPatch" parent="ColorRect/TabContainer/AddPatch" unique_id=2009050403 instance=ExtResource("2_62cc7")]
+layout_mode = 2
+size_flags_vertical = 3

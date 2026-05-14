@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://biv628vrfj06g"]
+
+[ext_resource type="Script" uid="uid://ccnhho1w5coab" path="res://source/add_patch.gd" id="1_qj7s8"]
+
+[node name="AddPatch" type="Control" unique_id=2009050403 node_paths=PackedStringArray("original_path", "original_path_button", "custom_path", "custom_path_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qj7s8")
+original_path = NodePath("ColorRect/VBoxContainer/OriginalPath/TextEdit")
+original_path_button = NodePath("ColorRect/VBoxContainer/OriginalPath/Button")
+custom_path = NodePath("ColorRect/VBoxContainer/CustomPath/TextEdit")
+custom_path_button = NodePath("ColorRect/VBoxContainer/CustomPath/Button")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=174454792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=873156180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OriginalPath" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=914128251]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/VBoxContainer/OriginalPath" unique_id=27907395]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Original Engine Path"
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/OriginalPath" unique_id=1178481764]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "Folder"
+
+[node name="CustomPath" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=233399364]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/VBoxContainer/CustomPath" unique_id=1463134400]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Custom Engine Path"
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/CustomPath" unique_id=1235535122]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "Folder"
