@@ -6,7 +6,6 @@ extends Node
 @export var target_path_button : Button
 
 @export var add_patch_button : Button
-@export var add_patch_back_button : Button
 
 var dir_dialog : FileDialog
 
@@ -14,7 +13,6 @@ func _ready():
 	target_path_button.pressed.connect(_on_select_folder_pressed)
 
 	add_patch_button.pressed.connect(_on_add_patch_pressed)
-	add_patch_back_button.pressed.connect(_on_add_patch_back_pressed)
 
 	dir_dialog = FileDialog.new()
 	dir_dialog.use_native_dialog = true
@@ -24,13 +22,10 @@ func _ready():
 	add_child(dir_dialog)
 
 func _on_select_folder_pressed():
-	dir_dialog.popup_centered_ratio(0.5)
+	dir_dialog.popup_centered()
 
 func _on_dir_selected(path: String):
 	target_path.text = path
 
 func _on_add_patch_pressed():
 	tab_container.current_tab = 1
-
-func _on_add_patch_back_pressed():
-	tab_container.current_tab = 0

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dbx46n3hh12dm" path="res://source/main.gd" id="1_kaxhg"]
 [ext_resource type="PackedScene" uid="uid://biv628vrfj06g" path="res://source/add_patch.tscn" id="2_62cc7"]
 
-[node name="Main" type="Control" unique_id=1232194366 node_paths=PackedStringArray("tab_container", "target_path", "target_path_button", "add_patch_button", "add_patch_back_button")]
+[node name="Main" type="Control" unique_id=1232194366 node_paths=PackedStringArray("tab_container", "target_path", "target_path_button", "add_patch_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,6 @@ tab_container = NodePath("ColorRect/TabContainer")
 target_path = NodePath("ColorRect/TabContainer/Main/TargetPath/TextEdit")
 target_path_button = NodePath("ColorRect/TabContainer/Main/TargetPath/Button")
 add_patch_button = NodePath("ColorRect/TabContainer/Main/Patch/Button")
-add_patch_back_button = NodePath("ColorRect/TabContainer/AddPatch/Button")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1504229875]
 layout_mode = 1
@@ -78,15 +77,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Apply"
 
-[node name="AddPatch" type="VBoxContainer" parent="ColorRect/TabContainer" unique_id=2077574898]
+[node name="AddPatch" parent="ColorRect/TabContainer" unique_id=2009050403 instance=ExtResource("2_62cc7")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Button" type="Button" parent="ColorRect/TabContainer/AddPatch" unique_id=1546749528]
-layout_mode = 2
-text = "Back"
-
-[node name="AddPatch" parent="ColorRect/TabContainer/AddPatch" unique_id=2009050403 instance=ExtResource("2_62cc7")]
-layout_mode = 2
 size_flags_vertical = 3
+metadata/_tab_index = 1

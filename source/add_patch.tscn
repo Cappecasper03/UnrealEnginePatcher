@@ -59,3 +59,34 @@ placeholder_text = "Custom Engine Path"
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 text = "Folder"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=147824400]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer2" unique_id=1744189636]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Files"
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer2" unique_id=425715231]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Remove Selected"
+
+[node name="ItemList" type="ItemList" parent="ColorRect/VBoxContainer" unique_id=794218708]
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=362250805]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=251805833]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=82820678]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"

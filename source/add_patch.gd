@@ -11,6 +11,8 @@ var dir_dialog : FileDialog
 func _ready():
 	original_path_button.pressed.connect(_on_select_original_folder_pressed)
 
+	custom_path_button.pressed.connect(_on_select_custom_folder_pressed)
+
 	dir_dialog = FileDialog.new()
 	dir_dialog.use_native_dialog = true
 	dir_dialog.file_mode = FileDialog.FILE_MODE_OPEN_DIR
@@ -19,14 +21,14 @@ func _ready():
 
 func _on_select_original_folder_pressed():
 	dir_dialog.dir_selected.connect(_on_original_dir_selected)
-	dir_dialog.popup_centered_ratio(0.5)
+	dir_dialog.popup_centered()
 
 func _on_original_dir_selected(path: String):
 	original_path.text = path
 
 func _on_select_custom_folder_pressed():
 	dir_dialog.dir_selected.connect(_on_custom_dir_selected)
-	dir_dialog.popup_centered_ratio(0.5)
+	dir_dialog.popup_centered()
 
 func _on_custom_dir_selected(path: String):
-	original_path.text = path
+	custom_path.text = path
